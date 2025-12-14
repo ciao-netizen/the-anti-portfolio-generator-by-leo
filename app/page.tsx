@@ -84,7 +84,7 @@ export default function HomePage() {
               size="lg"
               className="rounded-full px-8 h-12 text-base text-muted-foreground cursor-pointer hover:bg-muted/50 hover:text-muted-foreground"
             >
-              <Link href="/examples">{t.landing.seeExamples}</Link>
+              <Link href="/framework">Framework</Link>
             </Button>
           </div>
         </div>

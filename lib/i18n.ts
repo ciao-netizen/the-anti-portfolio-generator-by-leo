@@ -9,7 +9,7 @@ export const translations = {
       subtitle:
         "AI flattens everyone into the same template. Show what makes you irreplaceable: how you think, the trade-offs you choose, the scars that prove you've done the work.",
       cta: "Build Your Anti-Portfolio",
-      seeExamples: "See Examples",
+      seeExamples: "Framework",
       nav: {
         examples: "Examples",
         start: "Start",
@@ -202,6 +202,126 @@ export const translations = {
         next: "Next",
       },
     },
+    framework: {
+      badge: "Framework document",
+      title: "The philosophy behind",
+      titleAccent: "anti-portfolio",
+      subtitle: "A new paradigm for self-presentation in a world where AI has made traditional portfolios obsolete.",
+      assumptions: {
+        title: "Base assumptions",
+        intro:
+          'What makes a portfolio "anti-traditional"? It starts with rejecting the fundamental lies of conventional self-presentation.',
+        traditional: "Traditional portfolio says",
+        traditionalList: [
+          "You are your job title",
+          "List every skill you have",
+          "Show only successes",
+          "Polish everything perfectly",
+          "Fit the template",
+        ],
+        antiPortfolio: "Anti-portfolio believes",
+        antiPortfolioList: [
+          "You are how you think",
+          "Reveal your one superpower",
+          "Failures prove you've done the work",
+          "Process matters more than output",
+          "Break the mold, show the human",
+        ],
+      },
+      patterns: {
+        title: "Patterns and questions",
+        intro: "We collect specific information through carefully designed questions. Here's why each matters:",
+        items: [
+          {
+            title: "Identity questions",
+            description:
+              '"What can\'t you stop thinking about?" reveals obsessions that define you better than any bio.',
+          },
+          {
+            title: "Superpower questions",
+            description: '"When do people seek you out?" uncovers asymmetric advantages you might not even recognize.',
+          },
+          {
+            title: "Story questions",
+            description:
+              '"Describe a moment that changed everything" extracts pivotal experiences that shaped your worldview.',
+          },
+          {
+            title: "Scar questions",
+            description:
+              '"What\'s your biggest mistake?" builds credibility through vulnerability that polished CVs never achieve.',
+          },
+          {
+            title: "Working style questions",
+            description:
+              "\"What's your dealbreaker?\" creates a user manual that helps others know if there's a real fit.",
+          },
+        ],
+      },
+      design: {
+        title: "Design principles",
+        intro: "How we balance uniqueness vs. standardization in every design decision:",
+        principles: [
+          {
+            title: "Structured chaos",
+            description: "Consistent sections enable comparison; personal content enables differentiation.",
+          },
+          {
+            title: "Personality map over skill matrix",
+            description: "Behavioral spectrums reveal fit better than any competency list.",
+          },
+          {
+            title: "Quotes as anchors",
+            description: "One signature quote captures your essence. Memorable, shareable, uniquely you.",
+          },
+          {
+            title: "Visual restraint",
+            description: "Clean typography, generous whitespace. The design recedes so your personality shines.",
+          },
+        ],
+      },
+      elements: {
+        title: "Elementi distintivi",
+        intro: "What makes anti-portfolio fundamentally different:",
+        items: [
+          {
+            title: "Zero job title as identity",
+            description:
+              "Your role calibrates context but never appears in the output. You're defined by how you think.",
+          },
+          {
+            title: "Dedicated failures section",
+            description:
+              '"Your scars" is a first-class citizen. Real mistakes build more trust than any success story.',
+          },
+          {
+            title: "Proprietary methodology",
+            description:
+              "5-step wizard: Identity → Superpower → Story → Scars → Manual. Each step builds on the previous.",
+          },
+          {
+            title: "Behavioral metrics over skills",
+            description: "Personality map uses real behavioral spectrums instead of meaningless skill ratings.",
+          },
+          {
+            title: "Process over results",
+            description: "Questions focus on how you made decisions, not what you shipped.",
+          },
+        ],
+      },
+      aiVision: {
+        title: "AI-native vision",
+        intro: "How we rethink portfolios for a world where AI has always existed:",
+        insight:
+          "When AI can generate any portfolio in seconds, the only defensible asset is authenticity that can't be faked. Failures, quirks, specific stories, behavioral patterns—these are impossible to fabricate convincingly.",
+        quote:
+          "In an AI-saturated world, the most valuable signal is the one that's hardest to fake: your specific failures, your weird obsessions, your honest contradictions.",
+      },
+      cta: {
+        text: "Ready to build yours?",
+        button: "Create your anti-portfolio",
+      },
+    },
   },
   it: {
     landing: {
@@ -211,7 +331,7 @@ export const translations = {
       subtitle:
         "L'AI appiattisce tutti nello stesso template. Mostra cosa ti rende insostituibile: come pensi, i compromessi che scegli, le cicatrici che provano che hai fatto il lavoro.",
       cta: "Crea il Tuo Anti-Portfolio",
-      seeExamples: "Vedi Esempi",
+      seeExamples: "Framework",
       nav: {
         examples: "Esempi",
         start: "Inizia",
@@ -403,6 +523,130 @@ export const translations = {
       navigation: {
         back: "Indietro",
         next: "Avanti",
+      },
+    },
+    framework: {
+      badge: "Framework document",
+      title: "La filosofia dietro",
+      titleAccent: "l'anti-portfolio",
+      subtitle:
+        "Un nuovo paradigma di auto-presentazione in un mondo dove l'AI ha reso obsoleti i portfolio tradizionali.",
+      assumptions: {
+        title: "Assunti base",
+        intro:
+          'Cosa rende un portfolio "anti-tradizionale"? Inizia col rifiutare le bugie fondamentali dell\'auto-presentazione convenzionale.',
+        traditional: "Il portfolio tradizionale dice",
+        traditionalList: [
+          "Sei il tuo job title",
+          "Elenca ogni competenza che hai",
+          "Mostra solo i successi",
+          "Lucida tutto alla perfezione",
+          "Adattati al template",
+        ],
+        antiPortfolio: "L'anti-portfolio crede",
+        antiPortfolioList: [
+          "Sei come pensi",
+          "Rivela il tuo unico superpotere",
+          "I fallimenti dimostrano che hai fatto il lavoro",
+          "Il processo conta più del risultato",
+          "Rompi lo schema, mostra l'umano",
+        ],
+      },
+      patterns: {
+        title: "Pattern e domande",
+        intro:
+          "Raccogliamo informazioni specifiche attraverso domande attentamente progettate. Ecco perché ognuna conta:",
+        items: [
+          {
+            title: "Domande sull'identità",
+            description:
+              '"A cosa non riesci a smettere di pensare?" rivela ossessioni che ti definiscono meglio di qualsiasi bio.',
+          },
+          {
+            title: "Domande sul superpotere",
+            description: '"Quando le persone ti cercano?" scopre vantaggi asimmetrici che potresti non riconoscere.',
+          },
+          {
+            title: "Domande sulla storia",
+            description:
+              '"Descrivi un momento che ha cambiato tutto" estrae esperienze cruciali che hanno plasmato la tua visione.',
+          },
+          {
+            title: "Domande sulle cicatrici",
+            description:
+              '"Qual è il tuo più grande errore?" costruisce credibilità attraverso la vulnerabilità che i CV lucidati non raggiungono mai.',
+          },
+          {
+            title: "Domande sullo stile di lavoro",
+            description:
+              '"Qual è il tuo dealbreaker?" crea un manuale utente che aiuta gli altri a capire se c\'è un vero fit.',
+          },
+        ],
+      },
+      design: {
+        title: "Principi di design",
+        intro: "Come bilanciamo unicità vs. standardizzazione in ogni decisione di design:",
+        principles: [
+          {
+            title: "Caos strutturato",
+            description:
+              "Sezioni coerenti permettono il confronto; contenuti personali permettono la differenziazione.",
+          },
+          {
+            title: "Mappa della personalità invece di matrice di skill",
+            description: "Gli spettri comportamentali rivelano il fit meglio di qualsiasi lista di competenze.",
+          },
+          {
+            title: "Citazioni come ancore",
+            description: "Una citazione firma cattura la tua essenza. Memorabile, condivisibile, unicamente tua.",
+          },
+          {
+            title: "Restraint visivo",
+            description:
+              "Tipografia pulita, spazio bianco generoso. Il design si ritira così la tua personalità brilla.",
+          },
+        ],
+      },
+      elements: {
+        title: "Elementi distintivi",
+        intro: "Cosa rende l'anti-portfolio fondamentalmente diverso:",
+        items: [
+          {
+            title: "Zero job title come identità",
+            description: "Il tuo ruolo calibra il contesto ma non appare mai nell'output. Sei definito da come pensi.",
+          },
+          {
+            title: "Sezione fallimenti dedicata",
+            description:
+              '"Le tue cicatrici" è un cittadino di prima classe. Gli errori reali costruiscono più fiducia di qualsiasi storia di successo.',
+          },
+          {
+            title: "Metodologia proprietaria",
+            description:
+              "Wizard a 5 step: Identità → Superpotere → Storia → Cicatrici → Manuale. Ogni step costruisce sul precedente.",
+          },
+          {
+            title: "Metriche comportamentali invece di skill",
+            description:
+              "La mappa della personalità usa spettri comportamentali reali invece di valutazioni di skill senza senso.",
+          },
+          {
+            title: "Processo sopra i risultati",
+            description: "Le domande si concentrano su come hai preso le decisioni, non su cosa hai prodotto.",
+          },
+        ],
+      },
+      aiVision: {
+        title: "Visione AI-native",
+        intro: "Come ripensiamo i portfolio per un mondo dove l'AI è sempre esistita:",
+        insight:
+          "Quando l'AI può generare qualsiasi portfolio in secondi, l'unico asset difendibile è l'autenticità che non può essere falsificata. Fallimenti, stranezze, storie specifiche, pattern comportamentali—questi sono impossibili da fabbricare in modo convincente.",
+        quote:
+          "In un mondo saturo di AI, il segnale più prezioso è quello più difficile da falsificare: i tuoi fallimenti specifici, le tue strane ossessioni, le tue oneste contraddizioni.",
+      },
+      cta: {
+        text: "Pronto a creare il tuo?",
+        button: "Crea il tuo anti-portfolio",
       },
     },
   },
