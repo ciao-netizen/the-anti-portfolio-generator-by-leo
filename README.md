@@ -1,30 +1,20 @@
 # Anti-Portfolio Generator
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+**🔗 [Prova il tool qui](https://the-anti-portfolio.vercel.app)**
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ciao-8786s-projects/v0-anti-portfolio-generator)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/pJDhdxT7MDv)
+## Cos'è?
 
-## Overview
+L'Anti-Portfolio è uno strumento che ti aiuta a creare un portfolio onesto basato sui tuoi fallimenti, errori e lezioni apprese. 
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+Invece di mostrare solo i successi, racconta la tua vera storia professionale attraverso le esperienze che ti hanno formato.
 
-## Deployment
+## Come funziona
 
-Your project is live at:
+1. Vai su [the-anti-portfolio.vercel.app](https://the-anti-portfolio.vercel.app)
+2. Rispondi alle domande guidate
+3. Genera il tuo Anti-Portfolio personalizzato
+4. Condividilo con chi vuoi
 
-**[https://vercel.com/ciao-8786s-projects/v0-anti-portfolio-generator](https://vercel.com/ciao-8786s-projects/v0-anti-portfolio-generator)**
+---
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/pJDhdxT7MDv](https://v0.app/chat/pJDhdxT7MDv)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+**Creato con [v0.app](https://v0.app) e deployato su [Vercel](https://vercel.com)**
