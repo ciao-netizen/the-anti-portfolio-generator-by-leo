@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   description:
     "Forget CVs. Generate a portfolio that reveals how you think, the trade-offs you make, and the failures that shaped you.",
   generator: "v0.app",
+  icons: {
+    icon: "/images/folder-icon.webp",
+    shortcut: "/images/folder-icon.webp",
+    apple: "/images/folder-icon.webp",
+  },
 }
 
 export const viewport: Viewport = {
