@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface Particle {
   x: number
@@ -14,6 +14,7 @@ interface Particle {
 
 export function FloatingParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -47,13 +48,15 @@ export function FloatingParticles() {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1, // 1-4px
-        speedX: (Math.random() - 0.5) * 0.3, // Very slow horizontal movement
-        speedY: (Math.random() - 0.5) * 0.3, // Very slow vertical movement
-        opacity: Math.random() * 0.5 + 0.3, // 0.3-0.8
+        size: Math.random() * 3 + 1,
+        speedX: (Math.random() - 0.5) * 0.3,
+        speedY: (Math.random() - 0.5) * 0.3,
+        opacity: Math.random() * 0.5 + 0.3,
         color: colors[Math.floor(Math.random() * colors.length)],
       })
     }
+
+    setTimeout(() => setIsReady(true), 100)
 
     // Animation loop
     let animationFrameId: number
@@ -90,5 +93,10 @@ export function FloatingParticles() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" style={{ opacity: 0.6 }} />
+  return (
+    <canvas
+      ref={canvasRef}
+      className={`absolute inset-0 pointer-events-none transition-opacity duration-700 ${isReady ? "opacity-60" : "opacity-0"}`}
+    />
+  )
 }
