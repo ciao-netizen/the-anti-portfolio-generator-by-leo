@@ -25,6 +25,10 @@ function getRedisClient(): Redis | null {
 const memoryStore = new Map<string, StoredPortfolio>()
 
 export async function savePortfolio(portfolio: StoredPortfolio): Promise<void> {
+  console.log("[v0] savePortfolio called for:", portfolio.id)
+  console.log("[v0] KV_REST_API_URL exists:", !!process.env.KV_REST_API_URL)
+  console.log("[v0] KV_REST_API_TOKEN exists:", !!process.env.KV_REST_API_TOKEN)
+  
   const client = getRedisClient()
   
   if (!client) {
@@ -35,11 +39,18 @@ export async function savePortfolio(portfolio: StoredPortfolio): Promise<void> {
   }
 
   try {
+    console.log("[v0] Attempting to save to Upstash Redis:", portfolio.id)
+    const key = `portfolio:${portfolio.id}`
+    const value = JSON.stringify(portfolio)
+    console.log("[v0] Key:", key, "Value length:", value.length)
+    
     // Save to Upstash Redis with 30 days expiration
-    await client.set(`portfolio:${portfolio.id}`, JSON.stringify(portfolio), { ex: 30 * 24 * 60 * 60 })
-    console.log("[v0] Portfolio saved to Upstash Redis:", portfolio.id)
+    const result = await client.set(key, value, { ex: 30 * 24 * 60 * 60 })
+    console.log("[v0] Redis SET result:", result)
+    console.log("[v0] Portfolio successfully saved to Upstash Redis:", portfolio.id)
   } catch (error) {
     console.error("[v0] Error saving to Upstash Redis:", error)
+    console.error("[v0] Error details:", error instanceof Error ? error.message : String(error))
     // Fallback to memory store
     memoryStore.set(`portfolio:${portfolio.id}`, portfolio)
     throw error
