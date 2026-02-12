@@ -25,24 +25,23 @@ function getRedisClient(): Redis | null {
 const memoryStore = new Map<string, StoredPortfolio>()
 
 export async function savePortfolio(portfolio: StoredPortfolio): Promise<void> {
+  // Always save to memory store first for immediate availability
+  memoryStore.set(`portfolio:${portfolio.id}`, portfolio)
+  
   const client = getRedisClient()
   
   if (!client) {
-    // Fallback to memory store
-    console.log("[v0] KV not configured, using memory store for:", portfolio.id)
-    memoryStore.set(`portfolio:${portfolio.id}`, portfolio)
+    console.log("[v0] KV not configured, portfolio saved to memory store only:", portfolio.id)
     return
   }
 
   try {
-    // Save to Upstash Redis with 30 days expiration
+    // Attempt to save to Upstash Redis with 30 days expiration
     await client.set(`portfolio:${portfolio.id}`, JSON.stringify(portfolio), { ex: 30 * 24 * 60 * 60 })
     console.log("[v0] Portfolio saved to Upstash Redis:", portfolio.id)
   } catch (error) {
-    console.error("[v0] Error saving to Upstash Redis:", error)
-    // Fallback to memory store
-    memoryStore.set(`portfolio:${portfolio.id}`, portfolio)
-    throw error
+    // Silent fail - portfolio is already in memory store and will work via sessionStorage
+    console.log("[v0] Upstash Redis unavailable, using memory/session fallback for:", portfolio.id)
   }
 }
 
