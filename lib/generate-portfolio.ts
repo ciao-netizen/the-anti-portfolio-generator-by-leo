@@ -111,7 +111,7 @@ export async function generatePortfolio(
   const userPrompt = buildUserPrompt(validatedInput)
   const developerPrompt = getDeveloperPrompt(variant, goal, currentRole, primaryLanguage)
 
-  console.log(`[v0] Generating portfolio in ${primaryLanguage} with gpt-5.1...`)
+  console.log(`[v0] Generating portfolio in ${primaryLanguage} with gpt-4o...`)
   console.log(`[v0] Goal: ${goal || "not specified"}, Role: ${currentRole || "not specified"}`)
 
   const languageInstruction =

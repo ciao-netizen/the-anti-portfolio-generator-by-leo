@@ -32,19 +32,25 @@ export async function savePortfolio(portfolio: StoredPortfolio): Promise<void> {
 export async function getPortfolio(id: string): Promise<StoredPortfolio | null> {
   if (!isKVConfigured()) {
     // Fallback to memory store
+    console.log("[v0] KV not configured, checking memory store for:", id)
     return memoryStore.get(`portfolio:${id}`) || null
   }
 
-  const response = await fetch(`${process.env.KV_REST_API_URL}/get/portfolio:${id}`, {
-    headers: {
-      Authorization: `Bearer ${process.env.KV_REST_API_TOKEN}`,
-    },
-  })
+  try {
+    const response = await fetch(`${process.env.KV_REST_API_URL}/get/portfolio:${id}`, {
+      headers: {
+        Authorization: `Bearer ${process.env.KV_REST_API_TOKEN}`,
+      },
+    })
 
-  if (!response.ok) {
+    if (!response.ok) {
+      return null
+    }
+
+    const data = await response.json()
+    return data.result ? JSON.parse(data.result) : null
+  } catch (error) {
+    console.error("[v0] Error fetching from KV:", error)
     return null
   }
-
-  const data = await response.json()
-  return data.result ? JSON.parse(data.result) : null
 }
