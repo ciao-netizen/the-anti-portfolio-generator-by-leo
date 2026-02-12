@@ -30,10 +30,17 @@ export async function savePortfolio(portfolio: StoredPortfolio): Promise<void> {
 }
 
 export async function getPortfolio(id: string): Promise<StoredPortfolio | null> {
+  // Check memory store first (for serverless function calls)
+  const memoryResult = memoryStore.get(`portfolio:${id}`)
+  if (memoryResult) {
+    console.log("[v0] Portfolio found in memory store:", id)
+    return memoryResult
+  }
+
   if (!isKVConfigured()) {
-    // Fallback to memory store
-    console.log("[v0] KV not configured, checking memory store for:", id)
-    return memoryStore.get(`portfolio:${id}`) || null
+    // KV not configured and not in memory, return null for client-side fallback
+    console.log("[v0] KV not configured, portfolio not in memory, using client fallback for:", id)
+    return null
   }
 
   try {
@@ -44,13 +51,15 @@ export async function getPortfolio(id: string): Promise<StoredPortfolio | null> 
     })
 
     if (!response.ok) {
+      console.log("[v0] KV fetch returned non-ok status, using client fallback for:", id)
       return null
     }
 
     const data = await response.json()
     return data.result ? JSON.parse(data.result) : null
   } catch (error) {
-    console.error("[v0] Error fetching from KV:", error)
+    // Silent fallback to client-side sessionStorage
+    console.log("[v0] KV fetch failed, using client fallback for:", id)
     return null
   }
 }
