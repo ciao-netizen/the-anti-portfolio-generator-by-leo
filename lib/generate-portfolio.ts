@@ -168,9 +168,9 @@ export async function generatePortfolio(
 
   try {
     await savePortfolio(portfolio)
-    console.log(`[v0] Portfolio saved to KV with ID: ${niceId}`)
   } catch (error) {
-    console.log("[v0] KV save skipped (not configured)")
+    console.error("[v0] Failed to save portfolio to KV:", error)
+    // Continue anyway - portfolio can still be used from sessionStorage
   }
 
   return portfolio
