@@ -39,9 +39,9 @@ async function callOpenAI(messages: { role: string; content: string }[]): Promis
       Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      model: "gpt-5.1",
+      model: "gpt-4o",
       messages,
-      max_completion_tokens: 5000,
+      max_tokens: 5000,
       temperature: 0.8,
       response_format: { type: "json_object" },
     }),
